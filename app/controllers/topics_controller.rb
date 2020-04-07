@@ -10,7 +10,6 @@ class TopicsController < ApplicationController
   end
   
   def create
-  
     @topic = current_user.topics.new(topic_params)
     
     if @topic.save
@@ -20,6 +19,8 @@ class TopicsController < ApplicationController
       render :new
     end
   end
+  
+  
   
   private
   

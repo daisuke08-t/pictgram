@@ -1,7 +1,8 @@
 class FavoritesController < ApplicationController
+ #before_action :favorite, only: :index
   
   def index
-    @favorite_topics = current_user.favorite_topics
+
   end
   
   def create
@@ -18,9 +19,9 @@ class FavoritesController < ApplicationController
   end
   
   def destroy
-    #unfavorite = Favorite.find(params[:id]).favorite
-    #unfavorite.destroy
-     # redirect_to topics_path, success: 'お気に入りを解除しました'
+    unfavorite = Favorite.find_by(params[:id])
+    unfavorite.destroy
+     redirect_to topics_path, success: 'お気に入りを解除しました'
   end
   
     

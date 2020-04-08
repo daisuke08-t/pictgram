@@ -15,12 +15,15 @@ Rails.application.routes.draw do
   
   delete '/logout', to: 'sessions#destroy'
   
-  resources :topics
+  resources :topics 
   
   get 'favorites/index'
   
   post '/favorites', to: 'favorites#create'
   
   delete '/favorites_destroy', to: 'favorites#destroy'
+  
+  
+   resources :microposts
   
 end

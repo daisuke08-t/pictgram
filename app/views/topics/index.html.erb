@@ -19,12 +19,20 @@
             <% end %>
           <% end %>
           
+          <%= link_to new_micropost_path(topic_id: topic.id) do %>
+            <%= image_tag 'tech-boost-image/icon/comment.png', class: 'topic-index-icon' %>
+          <% end %>
           
-          
-          <%= image_tag 'tech-boost-image/icon/comment.png', class: 'topic-index-icon' %>
           <p class="topic-text">
             <%= topic.description %>
           </p>
+          
+          <h3>コメント</h3>
+          <!--一つ一つのtopicに関連づいているmicropostを取得する-->
+          <% topic.microposts.each do |m| %>
+          <p><%= m.coment %></p>
+          <% end %>
+          
         </div>
       </div>
     </div>

@@ -11,4 +11,7 @@ class User < ApplicationRecord
     has_many :topics
     has_many :favorites
     has_many :favorite_topics, through: :favorites, source: 'topic'
+    
+    has_many :microposts
+    has_many :micropost_topics, through: :microposts, source: 'topic'
 end

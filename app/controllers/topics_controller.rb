@@ -1,5 +1,6 @@
 class TopicsController < ApplicationController
   before_action :logged_in_user, only: [:new, :create]
+  #before_action :micropost, only: [:index, :new]
   
   def index
     @topics = Topic.all.includes(:favorite_users)
@@ -8,6 +9,7 @@ class TopicsController < ApplicationController
   def new
     @topic = Topic.new
   end
+  
   
   def create
     @topic = current_user.topics.new(topic_params)

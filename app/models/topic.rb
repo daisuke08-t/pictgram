@@ -9,4 +9,7 @@ class Topic < ApplicationRecord
   
   has_many :favorites
   has_many :favorite_users, through: :favorites, source: 'user'
+  
+  has_many :microposts  #topicにmicropostを関連付ける
+  has_many :micropost_users, through: :microposts, source: 'user'
 end

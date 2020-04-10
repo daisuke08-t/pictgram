@@ -1,3 +1,4 @@
+<% if logged_in? %>
 <div class="topic-new-wrapper">
   <div class="container">
     <div class="row">
@@ -21,3 +22,6 @@
     </div>
   </div>
 </div>
+<% else %>
+<% logged_in_user %>
+<% end %>
